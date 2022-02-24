@@ -62,6 +62,9 @@
     timeout: 180
   delegate_to: localhost
 
+- name: Clear cached installimage facts
+  meta: clear_facts
+
 - name: Check is apt-get installed
   raw: command -v apt-get >/dev/null 2>&1
   changed_when: false
